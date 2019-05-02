@@ -1,0 +1,252 @@
+CCS PCM C Compiler, Version 5.021, 50860               20-May-16 16:02
+
+               Filename:   C:\My Documents\SVN\Developer - Microcontroller\Microchip\1704 - HCSR04\main.lst
+
+               ROM used:   117 words (3%)
+                           Largest free fragment is 2048
+               RAM used:   5 (1%) at main() level
+                           21 (4%) worst case
+               Stack used: 1 locations
+               Stack size: 16
+
+*
+0000:  MOVLP  00
+0001:  GOTO   018
+0002:  NOP
+.................... #include <main.h> 
+.................... #include <16F1704.h> 
+.................... //////////// Standard Header file for the PIC16F1704 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2013 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F1704 
+....................  
+.................... #list 
+....................  
+....................  
+.................... #FUSES NOWDT                   //No Watch Dog Timer 
+.................... #FUSES PROTECT                 //Code protected from reads 
+.................... #FUSES NOBROWNOUT              //No brownout reset 
+.................... #FUSES NOLVP                   //No low voltage prgming, B3(PIC16) or B5(PIC18) used for I/O 
+.................... #FUSES PLLEN 
+....................  
+.................... #use delay(internal=32Mhz) 
+0003:  MOVLW  20
+0004:  MOVWF  05
+0005:  MOVLW  05
+0006:  MOVWF  04
+0007:  MOVF   00,W
+0008:  BTFSC  03.2
+0009:  GOTO   017
+000A:  MOVLW  0A
+000B:  MOVWF  78
+000C:  CLRF   77
+000D:  DECFSZ 77,F
+000E:  GOTO   00D
+000F:  DECFSZ 78,F
+0010:  GOTO   00C
+0011:  MOVLW  5F
+0012:  MOVWF  77
+0013:  DECFSZ 77,F
+0014:  GOTO   013
+0015:  DECFSZ 00,F
+0016:  GOTO   00A
+0017:  RETURN
+....................  
+.................... // The maximum time to wait for a trigger response before timing out (this is waiting for distance pulse width to go high) 
+.................... #DEFINE HC_TIMEOUT_HIGH 400 
+....................  
+.................... // The maximum time to wait for a ping response before timing out (this is waiting for the distance pulse width to go low) 
+.................... #DEFINE HC_TIMEOUT_LOW 20000 
+....................  
+.................... #DEFINE PORT_ECHO    pin_c5 
+.................... #DEFINE PORT_TRIGGER pin_c4 
+....................  
+.................... #DEFINE PORT_LED pin_c3 
+....................  
+.................... #DEFINE PORT_UNIVERSAL pin_a2 
+....................  
+.................... #use fast_io(all) 
+....................  
+....................  
+.................... void main() { 
+0018:  MOVLW  F0
+0019:  MOVLB  01
+001A:  MOVWF  19
+001B:  MOVLB  03
+001C:  CLRF   0C
+001D:  CLRF   0E
+001E:  MOVLB  00
+001F:  CLRF   1F
+....................  
+....................   delay_ms(250); 
+0020:  MOVLW  FA
+0021:  MOVWF  25
+0022:  CALL   003
+....................  
+....................   output_drive(PORT_LED); 
+0023:  MOVLB  01
+0024:  BCF    0E.3
+....................   output_low(PORT_LED); 
+0025:  MOVLB  02
+0026:  BCF    0E.3
+....................    
+....................   output_drive(PORT_TRIGGER); 
+0027:  MOVLB  01
+0028:  BCF    0E.4
+....................   output_low(PORT_TRIGGER); 
+0029:  MOVLB  02
+002A:  BCF    0E.4
+....................  
+....................   output_float(PORT_ECHO);   
+002B:  MOVLB  01
+002C:  BSF    0E.5
+....................    
+....................   while(true) { 
+....................      
+....................     unsigned int16 cnt  = 0; 
+....................     unsigned int16 cnt2 = 0; 
+002D:  MOVLB  00
+002E:  CLRF   22
+002F:  CLRF   21
+0030:  CLRF   24
+0031:  CLRF   23
+....................          
+....................     // wait for 10 us trigger from client 
+....................     // Universal is INPUT 
+....................     // --------------------------------------------------------------------------------------------------------------- 
+....................      
+....................     output_float(PORT_UNIVERSAL); 
+0032:  MOVLB  01
+0033:  BSF    0C.2
+....................      
+....................     // wait for client signal to go high 
+....................     while (!input(PORT_UNIVERSAL)); 
+0034:  MOVLB  00
+0035:  BTFSS  0C.2
+0036:  GOTO   035
+....................     output_high(PORT_TRIGGER); 
+0037:  MOVLB  02
+0038:  BSF    0E.4
+....................  
+....................     // wait for client signal to go low 
+....................     while (input(PORT_UNIVERSAL)); 
+0039:  MOVLB  00
+003A:  BTFSC  0C.2
+003B:  GOTO   03A
+....................     output_low(PORT_TRIGGER); 
+003C:  MOVLB  02
+003D:  BCF    0E.4
+....................  
+....................     // Wait for the sensor to go high of returned value 
+....................     // Universal is OUTPUT 
+....................     // ---------------------------------------------------------------------------------------------------------------      
+....................  
+....................     output_high(PORT_LED); 
+003E:  BSF    0E.3
+....................     
+....................     output_drive(PORT_UNIVERSAL); 
+003F:  MOVLB  01
+0040:  BCF    0C.2
+....................     output_low(PORT_UNIVERSAL); 
+0041:  MOVLB  02
+0042:  BCF    0C.2
+....................  
+....................     delay_us(15); 
+0043:  MOVLW  27
+0044:  MOVWF  77
+0045:  DECFSZ 77,F
+0046:  GOTO   045
+0047:  GOTO   048
+....................      
+....................     // loop until timeout for sensor to go high, which is the start the echo response 
+....................     do { 
+....................  
+....................       // if the echo pin hasn't gone high in a certain amount of time, exit with a distance of 0 
+....................       if (cnt2 == HC_TIMEOUT_HIGH) 
+0048:  MOVLB  00
+0049:  MOVF   23,W
+004A:  SUBLW  90
+004B:  BTFSS  03.2
+004C:  GOTO   050
+004D:  DECFSZ 24,W
+004E:  GOTO   050
+....................         break; 
+004F:  GOTO   055
+....................            
+....................       cnt2++; 
+0050:  INCF   23,F
+0051:  BTFSC  03.2
+0052:  INCF   24,F
+....................     } while (!input(PORT_ECHO)); 
+0053:  BTFSS  0E.5
+0054:  GOTO   049
+....................  
+....................     output_high(PORT_UNIVERSAL); 
+0055:  MOVLB  02
+0056:  BSF    0C.2
+....................  
+....................     // Wait for the sensor to go low which reflects the distance 
+....................     // ---------------------------------------------------------------------------------------------------------------      
+....................      
+....................     if (cnt2 == HC_TIMEOUT_HIGH) { 
+0057:  MOVLB  00
+0058:  MOVF   23,W
+0059:  SUBLW  90
+005A:  BTFSS  03.2
+005B:  GOTO   062
+005C:  DECFSZ 24,W
+005D:  GOTO   062
+....................      
+....................       // the sensor did not respond to our ping so we go high for an arbitrary amount of time to return a long distance 
+....................       delay_ms(1); 
+005E:  MOVLW  01
+005F:  MOVWF  25
+0060:  CALL   003
+....................     } else { 
+0061:  GOTO   06F
+....................  
+....................       // the sensor responded to our ping so not let's wait until it goes low which reflects the distance or timeout 
+....................       do { 
+....................      
+....................         // if the echo pin hasn't gone high in a certain amount of time, exit with a fake distance 
+....................         if (cnt == HC_TIMEOUT_LOW) 
+0062:  MOVF   21,W
+0063:  SUBLW  20
+0064:  BTFSS  03.2
+0065:  GOTO   06A
+0066:  MOVF   22,W
+0067:  SUBLW  4E
+0068:  BTFSC  03.2
+....................           break; 
+0069:  GOTO   06F
+....................              
+....................         cnt++; 
+006A:  INCF   21,F
+006B:  BTFSC  03.2
+006C:  INCF   22,F
+....................       } while (input(PORT_ECHO)); 
+006D:  BTFSC  0E.5
+006E:  GOTO   062
+....................     } 
+....................      
+....................     output_low(PORT_UNIVERSAL); 
+006F:  MOVLB  02
+0070:  BCF    0C.2
+....................     output_low(PORT_LED);     
+0071:  BCF    0E.3
+0072:  MOVLB  01
+0073:  GOTO   02D
+....................   } 
+.................... } 
+0074:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3944   INTRC_IO NOWDT PUT MCLR PROTECT NOBROWNOUT NOCLKOUT IESO FCMEN
+   Word  2: 1EFF   NOWRT PPS1WAY ZCDDIS NOPLLEN STVREN BORV19 NOLPBOR NODEBUG NOLVP
