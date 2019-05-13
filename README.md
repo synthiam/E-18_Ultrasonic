@@ -9,7 +9,7 @@ This 3-wire Ultrasonic sensor works very well with the EZ-Builder Ultrasonic con
 
 **Documentation:** Schematic PDF, Datasheet PDF, BOM
 
-**Hardware:** Altium PCB design File, Altium SCH Design File
+**Hardware:** Altium PCB design File, Altium SCH Design File, Gerbers
 
 **Firmware:** Code, Compiled Hex
 
