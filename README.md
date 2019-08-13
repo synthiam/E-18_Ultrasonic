@@ -3,7 +3,11 @@
 ![Ultrasonic](https://live.staticflickr.com/65535/47744685401_8ac3556f95_k.jpg)
 ![Ultrasonic](https://live.staticflickr.com/65535/32801182167_54b761051f_k.jpg)
 
-This 3-wire Ultrasonic sensor works very well with the EZ-Builder Ultrasonic control. It saves the need for a fourth wire that most Ultrasonic sensors require.
+This Ultrasonic reference design gives a digital signal that corresponds to a distance value. The values coming from this sensor can be used to determine real world distance, collision detection, or objects detected by simulated radar.
+
+A unique feature of this design is that it saves the need for a fourth wire that most Ultrasonic sensors require, or an external voltage regulator. It's a simple 3-wire design with an integrated 5V regulator on-board.
+
+The related EZ-Builder behavior controls can be found here: https://synthiam.com/Products/Controls/Ultrasonic-Distance
 
 ## Contents
 
@@ -15,8 +19,8 @@ This 3-wire Ultrasonic sensor works very well with the EZ-Builder Ultrasonic con
 
 ## License
 
-For profit use of these files requires written consent. Contact partners@synthiam.com. For everyone else party on!
+For profit use of these files requires written consent. Contact partners@synthiam.com. For everyone else, party on!
 
 Please see LICENSE.md for license details.
 
-Link: https://synthiam.com/Software/Manual/Ultrasonic-Distance-16090
+Link: https://synthiam.com
