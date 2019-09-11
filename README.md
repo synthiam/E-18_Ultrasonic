@@ -21,7 +21,7 @@ The related EZ-Builder behavior controls can be found here: https://synthiam.com
 
 For profit use of these files requires written consent. Contact partners@synthiam.com. For everyone else, party on!
 
-Please see LICENSE.md for license details.
+Please see [LICENSE.md](https://github.com/synthiam/E-18_Ultrasonic/blob/master/LICENSE.md) for license details.
 
 Synthiam Website: https://synthiam.com
 
