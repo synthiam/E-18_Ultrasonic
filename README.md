@@ -11,7 +11,7 @@ The related EZ-Builder behavior controls can be found here: https://synthiam.com
 
 ## Contents
 
-**Documentation:** Schematic PDF, Datasheet PDF, BOM, Test Procedures
+**Documentation:** Schematic PDF, Datasheet PDF, BOM, Assembly Notes, Test Procedures
 
 **Hardware:** Altium PCB design File, Altium SCH Design File, Gerbers
 
