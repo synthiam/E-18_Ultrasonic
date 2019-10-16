@@ -8,7 +8,7 @@ There are many challenges when bringing robot products to market. These products
 
 Out of our passion to solve this issue, EZ-Builder was born. The EZ-Builder software platform reduces the time it takes to get from idea to implementation. It's the leading launch pad for robot builders to quickly apply technologies to their projects and businesses to speed up product development and iteration cycles. Since 2011 we have been listening to the challenges robot builders encounter and continue to provide them with an ever expanding toolbox of solutions. Join us on this journey!
 
-We didn't stop at the software, we also made time saving hardware solutions. This Ultrasonic reference design is one of them. The values coming from this sensor can be used to determine real world distance, collision detection, or objects detected by simulated radar when combined with EZ-Builder. This design It's a simple 3-wire design with an integrated 5V regulator on-board. It saves the need for a fourth wire that most Ultrasonic sensors require, or an external voltage regulator. We want to share these files with you so you can create your own version for your community and customers to enjoy!
+We didn't stop at the software, we also made time saving hardware solutions. This Ultrasonic reference design is one of them. The values coming from this sensor can be used to determine real world distance, collision detection, or objects detected by simulated radar when combined with EZ-Builder. This design is a simple 3-wire design with an integrated 5V regulator on-board. It saves the need for a fourth wire that most Ultrasonic sensors require, or an external voltage regulator. We want to share these files with you so you can create your own version for your community and customers to enjoy!
 
 **Major components:** 
 - PIC16F1704-I/ST PIC microcontroller (custom firmware provided)
@@ -16,9 +16,10 @@ We didn't stop at the software, we also made time saving hardware solutions. Thi
 - HC-SR04 Ultrasonic sensor
 
 **Manufacturing notes:** 
-1. Supplier: programs custom firmware into the PIC16F1704-I/ST at their facility before sending to manufacturer
-2. Manufacturer: Single side placement and soldering of SMT components
-3. Manufacturer: Dual Side soldering of THT components
+1. Supplier: provides pre-built HC-SR04 Sensor
+2. Supplier: programs custom firmware into the PIC16F1704-I/ST at their facility before sending to manufacturer
+3. Manufacturer: Single side placement and soldering of SMT components
+4. Manufacturer: Dual Side soldering of THT components
 
 ## Contents
 
