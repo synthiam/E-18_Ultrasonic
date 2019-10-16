@@ -55,7 +55,7 @@ Link: https://youtu.be/U_xIYUk4qag
 
 ## EZ-Builder Behavior Control
 
-The EZ-Builder behavior control for this reference design is very easy to use! Simply add an animation frame, click on the pixels, choose the color, and repeat! Activate the animations with the click of a mouse button or with code. 
+There are 3 EZ-Builder controls that are directly related to the Ultrasonic. The Ultrasonic Distance, Collision Detection, and Radar controls. Grab the values from each of these controls with the click of a mouse button or with code. 
 
 Link: https://synthiam.com/Products/Controls/Ultrasonic-Distance
 
