@@ -8,7 +8,7 @@ If you are new to GitHub and would like to create a derivative of this project, 
 
 Out of our passion to solve the issue of time waste in the robot creation process, EZ-Builder was born. The EZ-Builder software platform reduces the time it takes to get from idea to implementation. Since 2011 we have been listening to the challenges robot builders encounter and continue to provide them with an ever expanding toolbox of solutions. Join us on this journey!
 
-We didn't stop at the software, we also made time saving hardware solutions. This Ultrasonic reference design is one of them. The values coming from this sensor can be used to determine real world distance, collision detection, or objects detected by simulated radar when combined with EZ-Builder. This unique design has an integrated 5V regulator and only uses 3-wires instead of 4. We want to share these files with you so you can create your own version for your community and customers to enjoy!
+We didn't stop at the software, we also made time saving hardware solutions. This Ultrasonic reference design is one of them. The values coming from this sensor can be used to determine real world distance, collision detection, or objects detected by simulated radar when combined with EZ-Builder. This unique design has an integrated 5V regulator and only uses 3 wires instead of 4. We want to share these files with you so you can create your own version for your community and customers to enjoy!
 
 **Features:** 
 - Only one Digital I/O pin required (+ 2 power pins)
