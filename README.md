@@ -20,6 +20,7 @@ We didn't stop at the software, we also made time saving hardware solutions. Thi
 - Voltage input requirement: 6-20VDC
 - Current draw: 9mA
 - Dimensions: 45.2(W) x 20.3(L) x 29.7(H) (mm)
+- Weight: 11g
 
 **Major components:** 
 - PIC16F1704-I/ST PIC microcontroller (custom firmware provided)
