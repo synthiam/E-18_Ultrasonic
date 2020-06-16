@@ -6,9 +6,9 @@ If you are new to GitHub and would like to create a derivative of this project, 
 
 ## Description
 
-Out of our passion to solve the issue of time waste in the robot creation process, EZ-Builder was born. The EZ-Builder software platform reduces the time it takes to get from idea to implementation. Since 2011 we have been listening to the challenges robot builders encounter and continue to provide them with an ever expanding toolbox of solutions. Join us on this journey!
+Out of our passion to solve the issue of time waste in the robot creation process, ARC was born. The ARC software platform reduces the time it takes to get from idea to implementation. Since 2011 we have been listening to the challenges robot builders encounter and continue to provide them with an ever expanding toolbox of solutions. Join us on this journey!
 
-We didn't stop at the software, we also made time saving hardware solutions. This Ultrasonic reference design is one of them. The values coming from this sensor can be used to determine real world distance, collision detection, or objects detected by simulated radar when combined with EZ-Builder. This unique design has an integrated 5V regulator and only uses 3 wires instead of 4. We want to share these files with you so you can create your own version for your community and customers to enjoy!
+We didn't stop at the software, we also made time saving hardware solutions. This Ultrasonic reference design is one of them. The values coming from this sensor can be used to determine real world distance, collision detection, or objects detected by simulated radar when combined with ARC. This unique design has an integrated 5V regulator and only uses 3 wires instead of 4. We want to share these files with you so you can create your own version for your community and customers to enjoy!
 
 **Features:** 
 - Only one Digital I/O pin required (+ 2 power pins)
@@ -16,7 +16,7 @@ We didn't stop at the software, we also made time saving hardware solutions. Thi
 - On-board 5V regulation for HC-SR04
 - 5V tolerant I/O pins
 - Red LED status indicator
-- Multiple EZ-Builder behavior controls available
+- Multiple ARC skills available
 - Voltage input requirement: 6-20VDC
 - Current draw: 9mA
 - Dimensions: 45.2(W) x 20.3(L) x 29.7(H) (mm)
@@ -55,7 +55,7 @@ This Roll-out Video includes:
 
 1. Feature set 
 2. Hook-up guide 
-3. Using Synthiam EZ-Builder Software Behavior Control
+3. Using ARC skills
 4. Schematic overview
 5. Bill of Materials (BOM) overview
 6. Custom firmware location
@@ -65,9 +65,9 @@ Link: https://youtu.be/U_xIYUk4qag
 
 <a href="https://youtu.be/U_xIYUk4qag"><img src="https://media.giphy.com/media/Ky0A5ym6ERXtM6gtNM/giphy.gif" width="683" height="383"></a>
 
-## EZ-Builder Behavior Control
+## ARC Skills
 
-There are 3 EZ-Builder controls that are directly related to the Ultrasonic. The Ultrasonic Distance, Collision Detection, and Radar controls. Grab the values from each of these controls with the click of a mouse button or with code. 
+There are 3 ARC skills that are directly related to the Ultrasonic. The Ultrasonic Distance, Collision Detection, and Radar controls. Grab the values from each of these controls with the click of a mouse button or with code. 
 
 Link: https://synthiam.com/Products/Controls/Ultrasonic-Distance
 
